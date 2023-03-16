@@ -82,10 +82,15 @@ function generatePassword() {
     return "";
   }
 
-  if (!lowerCase && !upperCase && !numeric && !specialChars) {
-    return alert(
+  if (
+    passwordLength >= 8 &&
+    passwordLength <= 128 &&
+    !(lowerCase && upperCase && numeric && specialChars)
+  ) {
+    alert(
       "Please select at least one type of character to include in the password."
     );
+    return "";
   }
 
   if (lowerCase) {
